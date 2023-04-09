@@ -50,7 +50,7 @@
             clearAllKey = new Button();
             posNeg = new Button();
             clearLastKey = new Button();
-            richTextBox1 = new RichTextBox();
+            displayBox = new RichTextBox();
             SuspendLayout();
             // 
             // zeroKey
@@ -83,6 +83,7 @@
             addOp.TabIndex = 2;
             addOp.Text = "+";
             addOp.UseVisualStyleBackColor = true;
+            addOp.Click += addOp_Click;
             // 
             // oneKey
             // 
@@ -93,6 +94,7 @@
             oneKey.TabIndex = 3;
             oneKey.Text = "1";
             oneKey.UseVisualStyleBackColor = true;
+            oneKey.Click += oneKey_Click;
             // 
             // twoKey
             // 
@@ -103,6 +105,7 @@
             twoKey.TabIndex = 4;
             twoKey.Text = "2";
             twoKey.UseVisualStyleBackColor = true;
+            twoKey.Click += twoKey_Click;
             // 
             // threeKey
             // 
@@ -113,6 +116,7 @@
             threeKey.TabIndex = 5;
             threeKey.Text = "3";
             threeKey.UseVisualStyleBackColor = true;
+            threeKey.Click += threeKey_Click;
             // 
             // subtractOp
             // 
@@ -123,6 +127,7 @@
             subtractOp.TabIndex = 6;
             subtractOp.Text = "-";
             subtractOp.UseVisualStyleBackColor = true;
+            subtractOp.Click += subtractOp_Click;
             // 
             // fourKey
             // 
@@ -133,6 +138,7 @@
             fourKey.TabIndex = 7;
             fourKey.Text = "4";
             fourKey.UseVisualStyleBackColor = true;
+            fourKey.Click += fourKey_Click;
             // 
             // fiveKey
             // 
@@ -143,6 +149,7 @@
             fiveKey.TabIndex = 8;
             fiveKey.Text = "5";
             fiveKey.UseVisualStyleBackColor = true;
+            fiveKey.Click += fiveKey_Click;
             // 
             // equalOp
             // 
@@ -153,6 +160,7 @@
             equalOp.TabIndex = 9;
             equalOp.Text = "=";
             equalOp.UseVisualStyleBackColor = true;
+            equalOp.Click += equalOp_Click;
             // 
             // inverseX
             // 
@@ -194,6 +202,7 @@
             multOp.TabIndex = 13;
             multOp.Text = "*";
             multOp.UseVisualStyleBackColor = true;
+            multOp.Click += multOp_Click;
             // 
             // sevenKey
             // 
@@ -204,6 +213,7 @@
             sevenKey.TabIndex = 14;
             sevenKey.Text = "7";
             sevenKey.UseVisualStyleBackColor = true;
+            sevenKey.Click += sevenKey_Click;
             // 
             // eightKey
             // 
@@ -214,6 +224,7 @@
             eightKey.TabIndex = 15;
             eightKey.Text = "8";
             eightKey.UseVisualStyleBackColor = true;
+            eightKey.Click += eightKey_Click;
             // 
             // nineKey
             // 
@@ -224,6 +235,7 @@
             nineKey.TabIndex = 16;
             nineKey.Text = "9";
             nineKey.UseVisualStyleBackColor = true;
+            nineKey.Click += nineKey_Click;
             // 
             // divideOp
             // 
@@ -234,6 +246,7 @@
             divideOp.TabIndex = 17;
             divideOp.Text = "/";
             divideOp.UseVisualStyleBackColor = true;
+            divideOp.Click += divideOp_Click;
             // 
             // backKey
             // 
@@ -275,21 +288,21 @@
             clearLastKey.Text = "C";
             clearLastKey.UseVisualStyleBackColor = true;
             // 
-            // richTextBox1
+            // displayBox
             // 
-            richTextBox1.Location = new Point(8, 15);
-            richTextBox1.Margin = new Padding(3, 4, 3, 4);
-            richTextBox1.Name = "richTextBox1";
-            richTextBox1.Size = new Size(370, 127);
-            richTextBox1.TabIndex = 22;
-            richTextBox1.Text = "";
+            displayBox.Location = new Point(8, 15);
+            displayBox.Margin = new Padding(3, 4, 3, 4);
+            displayBox.Name = "displayBox";
+            displayBox.Size = new Size(370, 127);
+            displayBox.TabIndex = 22;
+            displayBox.Text = "";
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(382, 476);
-            Controls.Add(richTextBox1);
+            Controls.Add(displayBox);
             Controls.Add(clearLastKey);
             Controls.Add(posNeg);
             Controls.Add(clearAllKey);
@@ -342,6 +355,6 @@
         private Button clearAllKey;
         private Button posNeg;
         private Button clearLastKey;
-        private RichTextBox richTextBox1;
+        public RichTextBox displayBox;
     }
 }
