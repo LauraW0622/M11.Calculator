@@ -10,7 +10,7 @@ namespace M11.Calculator
     {
         public OperatorState() 
         {
-            this.f1 = base.f1;
+           
         }
 
         public override AbsState nextState(char digit)
@@ -18,7 +18,7 @@ namespace M11.Calculator
             string result = "" + digit;
             val2 = Double.Parse(result);
             f1.displayBox.Text = val2.ToString();
-            return f1.secondNumState; 
+            return new SecondNumberState(); ; 
         }
 
         public override AbsState nextState(Operator op)
@@ -31,7 +31,7 @@ namespace M11.Calculator
         {
             val1 = op.perform(val1, val2); 
             f1.displayBox.Text = val1.ToString();
-            return f1.resultState; 
+            return new ResultState(); 
         }
     }
 }

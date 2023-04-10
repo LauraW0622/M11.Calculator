@@ -13,6 +13,11 @@ namespace M11.Calculator
         public double val2;
         public Operator op;
 
+        public AbsState()
+        {
+            //this.f1 = new Form1;
+        }
+
         public abstract AbsState nextState(char digit);
 
         public abstract AbsState nextState(Operator op); 

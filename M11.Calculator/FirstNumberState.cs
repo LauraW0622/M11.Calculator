@@ -8,7 +8,9 @@ namespace M11.Calculator
 {
     internal class FirstNumberState : AbsState
     { 
-        public FirstNumberState() { }
+        public FirstNumberState() 
+        {
+        }
 
         public override AbsState nextState(char digit)
         {
@@ -21,15 +23,15 @@ namespace M11.Calculator
         public override AbsState nextState(Operator op)
         {
             this.op = op;
-            val2 = val1;
-            return f1.operatorState;
+            //val2 = val1;
+            return new OperatorState();
         }
 
         public override AbsState nextState(ResultState eq)
         {
             val1 = op.perform(val1, val2);
             f1.displayBox.Text = val1.ToString();
-            return f1.resultState;
+            return new ResultState();
         }
     }
     

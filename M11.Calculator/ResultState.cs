@@ -15,14 +15,14 @@ namespace M11.Calculator
             string result = "" + digit; 
             val1 = Double.Parse(result);
             f1.displayBox.Text = val1.ToString();
-            return f1.firstNumState; 
+            return new FirstNumberState(); 
         }
 
         public override AbsState nextState(Operator op)
         {
             this.op = op;
             val2 = val1;
-            return f1.operatorState;
+            return new OperatorState();
         }
 
         public override AbsState nextState(ResultState eq)

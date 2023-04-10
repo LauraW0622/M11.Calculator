@@ -23,14 +23,14 @@ namespace M11.Calculator
             this.op = op;
             val1 = op.perform(val1, val2);
             f1.displayBox.Text = "" + val1.ToString();
-            return f1.operatorState; 
+            return new OperatorState(); 
         }
 
         public override AbsState nextState(ResultState eq)
         {
             val1 = op.perform(val1, val2); 
             f1.displayBox.Text = val1.ToString();
-            return f1.resultState; 
+            return new ResultState(); 
         }
     }
 }

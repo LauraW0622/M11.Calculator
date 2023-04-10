@@ -6,18 +6,18 @@ namespace M11.Calculator
 
         public Form1()
         {
-            state = firstNumState;
             state.f1 = this;
+            
             InitializeComponent();
         }
 
-        public FirstNumberState firstNumState = new FirstNumberState();
-        public SecondNumberState secondNumState = new SecondNumberState();
-        public ResultState resultState = new ResultState();
-        public OperatorState operatorState = new OperatorState();
+        //public FirstNumberState firstNumState = new FirstNumberState();
+        //public SecondNumberState secondNumState = new SecondNumberState();
+        //public ResultState resultState = new ResultState();
+        //public OperatorState operatorState = new OperatorState();
 
-        public AbsState state;
-
+        public AbsState state = new FirstNumberState();
+        
 
         Add add = new Add();
         Subtract subtract = new Subtract();
@@ -96,7 +96,7 @@ namespace M11.Calculator
 
         private void equalOp_Click(object sender, EventArgs e)
         {
-            state = state.nextState(resultState);
+            state = state.nextState(new ResultState());
         }
     }
 }
