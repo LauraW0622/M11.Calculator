@@ -42,7 +42,6 @@ namespace M11.Calculator
             val2 = uop.perform(val1);
             f1.displayBox.Text = val2.ToString();
             return this;
-            //return new ResultState(val1, val2, uop);
         }
 
         public override AbsState nextState(ResultState eq)
