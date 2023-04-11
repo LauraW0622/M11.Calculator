@@ -2,27 +2,39 @@ namespace M11.Calculator
 {
     internal partial class Form1 : Form
     {
+        /*
+        FirstNumberState first = new FirstNumberState();
+        SecondNumberState second = new SecondNumberState();
+        OperatorState operators = new OperatorState();
+        ResultState equal = new ResultState();
+
+        AbsState state = first;*/
 
 
         public Form1()
         {
-            state.f1 = this;
-            
+            AbsState.f1 = this;
+
             InitializeComponent();
+
         }
 
-        //public FirstNumberState firstNumState = new FirstNumberState();
-        //public SecondNumberState secondNumState = new SecondNumberState();
-        //public ResultState resultState = new ResultState();
-        //public OperatorState operatorState = new OperatorState();
-
         public AbsState state = new FirstNumberState();
-        
 
         Add add = new Add();
         Subtract subtract = new Subtract();
         Divide divide = new Divide();
         Multiply multiply = new Multiply();
+
+        Sqrt squareRoot = new Sqrt();
+        Inversion inverse = new Inversion();
+        Negation negation = new Negation();
+
+        C c = new C();
+        CE ce = new CE();
+
+        Decimal dec = new Decimal();
+        BackSpace back = new BackSpace();
 
         private void zeroKey_Click(object sender, EventArgs e)
         {
@@ -97,6 +109,41 @@ namespace M11.Calculator
         private void equalOp_Click(object sender, EventArgs e)
         {
             state = state.nextState(new ResultState());
+        }
+
+        private void ceKey_Click(object sender, EventArgs e)
+        {
+            state = state.nextState(ce);
+        }
+
+        private void cKey_Click(object sender, EventArgs e)
+        {
+            state = state.nextState(c);
+        }
+
+        private void posNeg_Click(object sender, EventArgs e)
+        {
+            state = state.nextState(negation);
+        }
+
+        private void sqrt_Click(object sender, EventArgs e)
+        {
+            state = state.nextState(squareRoot);
+        }
+
+        private void inverseX_Click(object sender, EventArgs e)
+        {
+            state = state.nextState(inverse);
+        }
+
+        private void decPoint_Click(object sender, EventArgs e)
+        {
+            state = state.nextState(dec);
+        }
+
+        private void backKey_Click(object sender, EventArgs e)
+        {
+            state = state.nextState(back);
         }
     }
 }

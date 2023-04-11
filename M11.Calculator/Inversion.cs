@@ -1,0 +1,16 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace M11.Calculator
+{
+    internal class Inversion : Unary
+    {
+        public override double perform(double v)
+        {
+            return 1 / v;
+        }
+    }
+}

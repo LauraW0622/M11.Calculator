@@ -39,7 +39,7 @@
             fiveKey = new Button();
             equalOp = new Button();
             inverseX = new Button();
-            squareRoot = new Button();
+            sqrt = new Button();
             sixKey = new Button();
             multOp = new Button();
             sevenKey = new Button();
@@ -47,9 +47,9 @@
             nineKey = new Button();
             divideOp = new Button();
             backKey = new Button();
-            clearAllKey = new Button();
+            ceKey = new Button();
             posNeg = new Button();
-            clearLastKey = new Button();
+            cKey = new Button();
             displayBox = new RichTextBox();
             SuspendLayout();
             // 
@@ -73,6 +73,7 @@
             decPoint.TabIndex = 1;
             decPoint.Text = ".";
             decPoint.UseVisualStyleBackColor = true;
+            decPoint.Click += decPoint_Click;
             // 
             // addOp
             // 
@@ -171,16 +172,18 @@
             inverseX.TabIndex = 10;
             inverseX.Text = "1/x";
             inverseX.UseVisualStyleBackColor = true;
+            inverseX.Click += inverseX_Click;
             // 
-            // squareRoot
+            // sqrt
             // 
-            squareRoot.Location = new Point(309, 163);
-            squareRoot.Margin = new Padding(3, 4, 3, 4);
-            squareRoot.Name = "squareRoot";
-            squareRoot.Size = new Size(69, 76);
-            squareRoot.TabIndex = 11;
-            squareRoot.Text = "Sqrt";
-            squareRoot.UseVisualStyleBackColor = true;
+            sqrt.Location = new Point(309, 163);
+            sqrt.Margin = new Padding(3, 4, 3, 4);
+            sqrt.Name = "sqrt";
+            sqrt.Size = new Size(69, 76);
+            sqrt.TabIndex = 11;
+            sqrt.Text = "Sqrt";
+            sqrt.UseVisualStyleBackColor = true;
+            sqrt.Click += sqrt_Click;
             // 
             // sixKey
             // 
@@ -257,16 +260,18 @@
             backKey.TabIndex = 18;
             backKey.Text = "<---";
             backKey.UseVisualStyleBackColor = true;
+            backKey.Click += backKey_Click;
             // 
-            // clearAllKey
+            // ceKey
             // 
-            clearAllKey.Location = new Point(82, 163);
-            clearAllKey.Margin = new Padding(3, 4, 3, 4);
-            clearAllKey.Name = "clearAllKey";
-            clearAllKey.Size = new Size(67, 52);
-            clearAllKey.TabIndex = 19;
-            clearAllKey.Text = "CE";
-            clearAllKey.UseVisualStyleBackColor = true;
+            ceKey.Location = new Point(82, 163);
+            ceKey.Margin = new Padding(3, 4, 3, 4);
+            ceKey.Name = "ceKey";
+            ceKey.Size = new Size(67, 52);
+            ceKey.TabIndex = 19;
+            ceKey.Text = "CE";
+            ceKey.UseVisualStyleBackColor = true;
+            ceKey.Click += ceKey_Click;
             // 
             // posNeg
             // 
@@ -277,16 +282,18 @@
             posNeg.TabIndex = 20;
             posNeg.Text = "+/-";
             posNeg.UseVisualStyleBackColor = true;
+            posNeg.Click += posNeg_Click;
             // 
-            // clearLastKey
+            // cKey
             // 
-            clearLastKey.Location = new Point(157, 163);
-            clearLastKey.Margin = new Padding(3, 4, 3, 4);
-            clearLastKey.Name = "clearLastKey";
-            clearLastKey.Size = new Size(65, 52);
-            clearLastKey.TabIndex = 21;
-            clearLastKey.Text = "C";
-            clearLastKey.UseVisualStyleBackColor = true;
+            cKey.Location = new Point(157, 163);
+            cKey.Margin = new Padding(3, 4, 3, 4);
+            cKey.Name = "cKey";
+            cKey.Size = new Size(65, 52);
+            cKey.TabIndex = 21;
+            cKey.Text = "C";
+            cKey.UseVisualStyleBackColor = true;
+            cKey.Click += cKey_Click;
             // 
             // displayBox
             // 
@@ -303,9 +310,9 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(382, 476);
             Controls.Add(displayBox);
-            Controls.Add(clearLastKey);
+            Controls.Add(cKey);
             Controls.Add(posNeg);
-            Controls.Add(clearAllKey);
+            Controls.Add(ceKey);
             Controls.Add(backKey);
             Controls.Add(divideOp);
             Controls.Add(nineKey);
@@ -313,7 +320,7 @@
             Controls.Add(sevenKey);
             Controls.Add(multOp);
             Controls.Add(sixKey);
-            Controls.Add(squareRoot);
+            Controls.Add(sqrt);
             Controls.Add(inverseX);
             Controls.Add(equalOp);
             Controls.Add(fiveKey);
@@ -331,6 +338,11 @@
             ResumeLayout(false);
         }
 
+        private void PosNeg_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
         #endregion
 
         private Button zeroKey;
@@ -344,7 +356,7 @@
         private Button fiveKey;
         private Button equalOp;
         private Button inverseX;
-        private Button squareRoot;
+        private Button sqrt;
         private Button sixKey;
         private Button multOp;
         private Button sevenKey;
@@ -352,9 +364,9 @@
         private Button nineKey;
         private Button divideOp;
         private Button backKey;
-        private Button clearAllKey;
+        private Button ceKey;
         private Button posNeg;
-        private Button clearLastKey;
+        private Button cKey;
         public RichTextBox displayBox;
     }
 }
