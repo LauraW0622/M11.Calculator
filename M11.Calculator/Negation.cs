@@ -10,7 +10,12 @@ namespace M11.Calculator
     {
         public override double perform(double v)
         {
-            return v * -1;
+            if (v == 0)
+            {
+                return 0; 
+            }
+            else
+                return v * -1;
         }
     }
 }

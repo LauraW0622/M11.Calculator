@@ -47,6 +47,7 @@ namespace M11.Calculator
 
         public override AbsState nextState(ResultState eq)
         {
+            val2 = val1; 
             val1 = op.perform(val1, val2); 
             f1.displayBox.Text = val1.ToString();
             return new ResultState(val1, val2, op); 

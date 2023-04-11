@@ -56,7 +56,7 @@ namespace M11.Calculator
 
         //If = pressed, display the result and go to ResultState
         public override AbsState nextState(ResultState eq)
-        {
+        {  
             f1.displayBox.Text = val1.ToString();
             return new ResultState(val1, val2, op);
         }

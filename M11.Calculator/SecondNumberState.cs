@@ -37,8 +37,7 @@ namespace M11.Calculator
         //If a binary operator is pressed (+ - / *) go to Operator state
         public override AbsState nextState(Operator op)
         {
-            //base.op = op;
-            val1 = op.perform(val1, val2);
+            val1 = base.op.perform(val1, val2);
             f1.displayBox.Text = "" + val1.ToString();
             return new OperatorState(val1, val2, op);
         }

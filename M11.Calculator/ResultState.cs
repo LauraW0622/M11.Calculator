@@ -52,9 +52,12 @@ namespace M11.Calculator
         //Buttons: = 
         public override AbsState nextState(ResultState eq)
         {
-            val1 = op.perform(val1, val2); 
-            f1.displayBox.Text = val1.ToString();
-            return this; 
+            if (op != null)
+            {
+                val1 = op.perform(val1, val2);
+                f1.displayBox.Text = val1.ToString();
+            }
+            return this;
         }
 
         public override AbsState nextState(Decimal dec)
